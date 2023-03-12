@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html >
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>商品详情</title>
+<meta name="keywords" content="首页" />
+<meta name="description" content="首页" />
+ <link rel="stylesheet" type="text/css" href="css/css.css"/>
+ <link rel="stylesheet" type="text/css" href="css/shopDetail.css"/>
+ <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+ <script src="js/shopDetail.js" type="text/javascript" charset="utf-8"></script>
+   <script type="text/javascript">
+  $(document).ready(function(){
+	  var CYK_showproductt = {
+		  "boxid":"showbox",
+		  "sumid":"showsum",
+		  "boxw":400,//宽度,该版本中请把宽高填写成一样
+		  "boxh":400,//高度,该版本中请把宽高填写成一样
+		  "sumw":60,//列表每个宽度,该版本中请把宽高填写成一样
+		  "sumh":60,//列表每个高度,该版本中请把宽高填写成一样
+		  "sumi":7,//列表间隔
+		  "sums":5,//列表显示个数
+		  "sumsel":"sel",
+		  "sumborder":1,//列表边框，没有边框填写0，边框在css中修改
+		  "lastid":"showlast",
+		  "nextid":"shownext"
+		  };//参数定义	  
+	 $.ljsGlasses.pcGlasses(CYK_showproductt);//方法调用，务必在加载完后执行
+  });
+</script>
+</head>
+<body  bgcolor="#F4F4F4">
+		<!-- 头部导航-->
+	<div id="login">
+	<h2>欢迎！</h2>
+	<div id="loginp"><a href="login.html">登录</a>|<a href="#">注册</a>|<a href="lianxi.html">联系我们</a></div>
+	</div>
+	<div id="logoall">
+	<div id="logo">
+	    <div id="logo1"><a href="index.html">
+	    <img src="image/logo.png" width="200" height="100" />
+	    </a>
+	    </div>
+	   <div id="logo2"><img src="image/logoright.png" width="100" height="25" /></div></div></div>
+	<div id="naviall">
+	<div id="navi">
+	    <ul>
+	         <li><a href="index.html">首页</a></li>
+	         <li><a href="About.html">关于</a></li>
+	         <li id="p"><a href="show.html">产品展示</a>
+	         	<div>
+	         		<ul id="p_show" hidden="hidden">
+						<li><a href="show.html#content1">酒庄系列</a></li>
+						<li><a href="show.html#content2">优选系列</a></li>
+						<li><a href="show.html#tast">酒具</a></li>
+					</ul>						
+         		</div>
+	         </li>
+	         <li><a href="service.html">服务</a></li>
+	         <li><a href="liuyan.html">在线留言</a></li>
+	         <li><a href="lianxi.html">联系我们</a></li>
+	     </ul>
+	</div>
+	</div>
+	<!--头部结束-->
+ <div class="showall">
+	                <!--left -->
+	                <div class="showbot">
+                    <div id="showbox">
+                        <img src="image/a2.jpg" width="400" height="400" />
+                        <img src="image/a3.jpg" width="400" height="400" />
+                        <img src="image/a3.jpg" width="400" height="400" />
+                        <img src="image/a4.jpg" width="400" height="400" />
+                        <img src="image/a5.jpg" width="400" height="400" />
+                        <img src="image/c1.jpg" width="400" height="400" />
+                        
+                    </div><!--展示图片盒子-->
+                        <div id="showsum">
+                        	<!--展示图片里边-->
+                        </div>
+                        <p class="showpage">
+                            <a href="javascript:void(0);" id="showlast"> < </a>
+                            <a href="javascript:void(0);" id="shownext"> > </a>
+                        </p>
+                        </div>
+                        <!--conet -->
+                        <div class="tb-property">
+                        	<div class="tr-nobdr">
+                        		<h3> 波尔多</h3>
+                        	</div>
+                        		<div class="txt">
+                        			<span class="nowprice">￥<a href="">599.00</a></span>
+                        			<div class="cumulative">
+                        				<span class="number ty1">累计售出<br /><em id="add_sell_num_363">370</em></span>
+                        				<span class="number tyu">累计评价<br /><em id="add_sell_num_363">25</em></span>
+                        			</div>
+                        		</div>
+                        	<div class="txt-h">
+                        		<span class="tex-o">分类</span>
+                        		<ul class="glist" id="glist" data-monitor="goodsdetails_fenlei_click">
+                        			<li><a style="background-color: #FF957D;" title="二级庄" href="">二级庄</a></li>
+                        			<li><a title="三级庄" href="">三级庄</a></li>
+                        			<li><a title="四级庄" href="">四级庄</a></li>
+                        		</ul>
+                        	</div>
+                        	<script>
+                        	$(document).ready(function(){
+                        	
+                          	var CYK_t = $("#text_box");
+                        	
+                        	$('#min').attr('disabled',true);
+                            	
+                            	$("#add").click(function(){    
+                               	 CYK_t.val(parseInt(CYK_t.val())+1)
+                               	 if (parseInt(CYK_t.val())!=1){
+                                   	 $('#min').attr('disabled',false);
+                                	}
+      
+                           	 }) 
+                            	
+                            	$("#min").click(function(){
+                                	CYK_t.val(parseInt(CYK_t.val())-1);
+                                	if (parseInt(CYK_t.val())==1){
+                                   	 $('#min').attr('disabled',true);
+                                	}
+      
+                            	})  
+                        	});
+                        	</script>  
+                        	<div class="gcIpt">
+                        		<span class="guT">数量</span>
+                        		<input id="min" name="" type="button" value="-" />  
+                        		<input id="text_box" name="" type="text" value="1"style="width:30px; text-align: center; color: #0F0F0F;"/>  
+                        		<input id="add" name="" type="button" value="+" />
+                        		<span class="Hgt">库存（99）</span>
+                        	</div>
+                        	<div class="nobdr-btns">
+                        		<button class="addcart hu"><img src="image/shop.png" width="25" height="25"/><a href="shopCar.html">加入购物车</a></button>
+                        		<button class="addcart yh"><img src="image/ht.png" width="25" height="25"/>立即购买</button>
+                        	</div>
+                        	<div class="guarantee">
+                        		<span>邮费：包邮&nbsp;&nbsp;支持货到付款 <a href="service.html"><img src="image/me.png"/></a></span>
+                        	</div>
+                        </div>
+                        
+
+<!-- 商品介紹 -->                
+                <div class="gdetail">
+                	<!-- left -->
+                	<div class="aside">
+                		  <h3>看了还看<span><img src="image/fod.png"width="22" height="22"/>换一批</span></h3>
+                		  <dl class="ac-mod-list">
+                		  	<dt><a href=""><img src="image/f2.JPG"/></a></dt>
+                		  	<dd>
+                		  		  对开门黑色双礼盒
+                		  		  <span>￥99</span>
+                		  	</dd>
+                		  </dl>
+                		  <dl class="ac-mod-list">
+                		  	<dt><a href=""><img src="image/f1.PNG"/></a></dt>
+                		  	<dd>
+                		  		  酒具三件套
+                		  		  <span>￥199</span>
+                		  	</dd>
+                		  </dl>
+                		  <dl class="ac-mod-list">
+                		  	<dt><a href=""><img src="image/f3.png"/></a></dt>
+                		  	<dd>
+                		  		  竖琴醒酒器
+                		  		  <span>￥99</span>
+                		  	</dd>
+                		  </dl>
+                	</div>
+                	<!-- right -->
+                	<script>
+                	var CYK_detail = document.querySelector('.detail');
+									var CYK_origOffsetY = CYK_detail.offsetTop;
+									function onScroll(e) {
+									window.scrollY >= CYK_origOffsetY ? CYK_detail.classList.add('sticky') :
+									CYK_detail.classList.remove('sticky');
+									}
+									document.addEventListener('scroll', onScroll); 
+									</script>
+                	<div class="detail">
+                		<div class="active_tab" id="outer">
+													<ul class="act_title_left" id="tab">
+														<li class="act_active">
+															<a href="#">规格参数</a>
+														</li>
+														<li>
+															<a href="#">商品介绍</a>
+														</li>
+														<li>
+															<a href="#">商品评价</a>
+														</li>
+														<li>
+															<a href="#">售后保障</a>
+														</li>
+													</ul>
+													<ul class="act_title_right">
+														<li class="mui">  
+															<a style="text-decoration: underline;" id="mui-a" href="#">扫手机下单+</a>
+														</li>
+														<li class="mui-ac">
+															<a href="shopCar.html">加入购物车</a>
+														</li>
+													</ul>
+													<div class="clear"></div>
+												</div>
+												<div id="content" class="active_list"> 
+													<!--0-->
+													<div id="ui-a" class="ui-a">
+												        <ul style="display:block;">
+												        <li>商品名称：2009年雷诺帝酒庄阿玛罗尼经典红葡萄酒</li>
+												        <li>商品编号：CK2009033006</li>
+												        <li>品牌</li>
+												        <li>上架时间：2016-05-24</li>
+												        <li>商品毛重：700ml</li>
+												        <li>库存： 999 </li>
+												        
+												        </ul>
+												   </div>
+												   <!--商品规格-->
+												    	<div id="bit" class="bit">
+												        <ul style="display:none;">
+												            
+												                
+												       </ul>
+												       </div>
+												       
+												 <!--商品评价-->      
+												   
+												    <div id="ui-c" class="ui-c">
+												         <ul style="display:none;">
+												         	
+												         </ul>
+												    </div>
+												 <!--售后保障-->
+												 <div id="uic" class="uic">
+												         <ul style="display:none;">
+												         	<p>商品名称：2009年雷诺帝酒庄阿玛罗尼经典红葡萄酒</p>
+												         	<p>商品编号：CK2009033006</p>
+												         	<p>品牌:阿玛罗尼</p>
+												         	<p>上架时间：2016-05-24</p>
+												         	<span></span>
+												         </ul>
+												    </div>
+												</div>
+												<script>
+													$(function(){
+														window.onload = function()
+														{
+															if(getCookie("user")==1){
+																document.getElementById("loginp").innerHTML="陈元凯|<a href='javascript:void(0)' onclick='exitLogin()'>退出登录</a>|<a href='shopCar.html'>购物车</a>";//
+																}
+															var $CYK_li = $('#tab li');
+															var $CYK_ul = $('#content ul');
+																		
+															$CYK_li.mouseover(function(){
+																var $CYK_this = $(this);
+																var $CYK_t = $CYK_this.index();
+																$CYK_li.removeClass();
+																$CYK_this.addClass('act_active');
+																$CYK_ul.css('display','none');
+																$CYK_ul.eq($CYK_t).css('display','block');
+															})
+														}
+													});  
+												</script>
+                	</div>
+                </div>
+                <script type="text/javascript">
+	
+	function getCookie(name){
+	  var CYK_arr,CYK_reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+	  if(CYK_arr=document.cookie.match(CYK_reg)){
+	    return unescape(CYK_arr[2]);
+	  }else{
+	    return null;
+	  }
+	}
+	function exitLogin(){
+		delCookie("user");
+		location.reload();
+	}
+
+	function delCookie (name) {
+	  var exp = new Date();
+	  exp.setTime(exp.getTime() - 1);
+	  var cval = getCookie(name);
+	  if (cval && cval != null) {
+	    document.cookie = name + '=' + cval + ';expires=' + exp.toGMTString();
+	  }
+	}
+</script>
+</body>
+</html>

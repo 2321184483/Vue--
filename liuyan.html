@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>发布</title>
+    <link rel="stylesheet" type="text/css" href="css/css.css" />
+    <link rel="stylesheet" type="text/css" href="css/liluyan.css" />
+</head>
+
+<body bgcolor="#F4F4F4">
+    <!-- 头部导航-->
+    <nav id="guding">
+        <div id="login">
+            <h2>欢迎！</h2>
+            <div id="loginp"><a href="login.html">登录</a>|<a href="#">注册</a>|<a href="lianxi.html">联系我们</a></div>
+        </div>
+        <div id="logoall">
+            <div id="logo">
+                <div id="logo1">
+                    <a href="index.html">
+                        <img src="image/logo.png" width="200" height="100" />
+                    </a>
+                </div>
+                <div id="logo2"><img src="image/logoright.png" width="100" height="25" /></div>
+            </div>
+        </div>
+        <div id="naviall">
+            <div id="navi">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="About.html">关于</a></li>
+                    <li id="p"><a href="show.html">产品展示</a>
+                        <div>
+                            <ul id="p_show" hidden="hidden">
+                                <li><a href="show.html#content1">酒庄系列</a></li>
+                                <li><a href="show.html#content2">优选系列</a></li>
+                                <li><a href="show.html#tast">酒具</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="service.html">服务</a></li>
+                    <li>
+                        <div class="liuyan"><a href="#">在线留言</a></div>
+                    </li>
+                    <li><a href="lianxi.html">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="addHeight"></div>
+    <!--头部结束-->
+    <div class="wrap">
+        <div class="says">
+            <h1>来，说说你在做什么，想什么...</h1>
+            <textarea>请点击发布试试吧<br>输入内容，点击发布即可！</textarea><input type="button" value="发布">
+            <div class="errmsg">请填写内容后再发布！</div>
+        </div>
+        <ul class="liuyan_ul">
+
+        </ul>
+    </div>
+
+    <!--尾部-->
+    <div id="version">
+        <p>关于我们 | 约稿启事 | 网站导航 | 诚聘英才| 刊登广告 | 服务项目 | 联系我们 | 法律声明 | 建议投诉 | 网站帮助| 友情链接<br />
+        </p>
+        <p>xxxxxx | xxx-xxxx|投诉信箱：info@wines-xx.com<br /></p>
+        <p> xxx || xxxxx || 班级 xxxxx || 学号 xxxxx || 姓名 xxxx </p>
+    </div>
+    <!--尾部结束-->
+
+    <script>
+        window.onload = function() {
+
+            if (getCookie("user") == 1) {
+                document.getElementById("loginp").innerHTML = "陈元凯|<a href='javascript:void(0)' onclick='exitLogin()'>退出登录</a>|<a href='shopCar.html'>购物车</a>"; //
+            }
+            var CYK_oWrap = document.getElementsByClassName("wrap")[0];
+            var CYK_oTextarea = CYK_oWrap.getElementsByTagName("textarea")[0];
+            var CYK_oBtn = CYK_oWrap.getElementsByTagName("input")[0];
+
+            var CYK_oUl = CYK_oWrap.getElementsByTagName("ul")[0];
+            var CYK_errMsg = CYK_oWrap.getElementsByClassName("errmsg")[0];
+            var CYK_oA = document.getElementsByTagName("a");
+            //console.log(CYK_oA);
+            var CYK_t = new Date();
+            var CYK_Year = CYK_t.getFullYear();
+            var CYK_Month = CYK_t.getMonth() + 1;
+            var CYK_Day = CYK_t.getDate();
+            var CYK_Hours = CYK_t.getHours();
+            var CYK_Minutes = CYK_t.getMinutes();
+            var CYK_Scondes = CYK_t.getSeconds();
+            var CYK_timers = toString(CYK_Year) + "年" + toString(CYK_Month) + "月" + toString(CYK_Day) + "日" + toString(CYK_Hours) + ":" + toString(CYK_Minutes) + ":" + toString(CYK_Scondes); //将获取到的日期对象拼接。
+            //console.log(CYK_timers);
+
+            function toString(n) //数字转字符串
+            {
+                if (n < 9) {
+                    n = "0" + n;
+                } else {
+                    n = "" + n;
+                }
+                return n;
+            };
+
+            CYK_oBtn.onclick = function()
+
+            {
+                if (CYK_oTextarea.value == "") {
+                    startMove(CYK_errMsg, {
+                        opacity: 100
+                    });
+                    //console.log(CYK_errMsg.style.opacity)
+                    CYK_oTextarea.select();
+                } else {
+                    var CYK_aLi = document.createElement("li");
+                    var CYK_aSpan = document.createElement("span");
+                    //console.log(CYK_aLi);
+                    //console.log(CYK_aSpan);
+                    //CYK_oUl.appendChild(CYK_aLi);
+                    //CYK_aLi.appendChild(CYK_aSpan);
+                    CYK_aLi.innerHTML = CYK_oTextarea.value;
+                    CYK_aSpan.innerHTML = CYK_timers + "<a href='javascript:;' title='删除这条信息'>删除</a>";
+                    //CYK_aSpan.innerHTML="<a href='javascript:;'>删除</a>"
+                    if (CYK_oUl.children.length > 0) {
+                        CYK_oUl.insertBefore(CYK_aLi, CYK_oUl.children[0]);
+                        CYK_aLi.appendChild(CYK_aSpan);
+                        CYK_oTextarea.value = "";
+                    } else {
+                        CYK_oUl.appendChild(CYK_aLi);
+                        CYK_aLi.appendChild(CYK_aSpan);
+                        CYK_oTextarea.value = "";
+                    };
+                    var aLiHeight = parseInt(getStyle(CYK_aLi, "height"));
+                    //console.log(aLiHeight);
+                    CYK_aLi.style.height = "0";
+                    startMove(CYK_aLi, {
+                        height: aLiHeight
+                    }, function() {
+                        startMove(CYK_aLi, {
+                            opacity: 100
+                        });
+                    });
+                    delLi(); //添加数据后加载删除模块	
+                }
+            };
+
+            function delLi() {
+                for (var i = 0; i < CYK_oA.length; i++) {
+                    CYK_oA[i].onclick = function() {
+                        liNode = this.parentNode.parentNode //获取到当前A标签的父节点，也就是LI
+                        var aLiHeight = parseInt(getStyle(liNode, "height")) + 1;
+                        //console.log(aLiHeight);
+                        //链式运动操作：先进行透明化，再进行高度变小，最后删除DOM元素
+                        startMove(liNode, {
+                            opacity: 0
+                        }, function() {
+                            startMove(liNode, {
+                                height: 0
+                            }, function() {
+                                CYK_oUl.removeChild(liNode);
+                            });
+                        });
+                    }
+                }
+            }
+        };
+
+        //运动框架
+        function startMove(obj, json, endFn) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(
+                function() {
+
+                    var CYK_iStop = true;
+                    for (var CYK_curr in json) {
+                        var CYK_oNumber = 0;
+                        if (CYK_curr == "opacity") {
+                            CYK_oNumber = Math.round(parseFloat(getStyle(obj, CYK_curr)) * 100);
+                        } else {
+                            CYK_oNumber = parseInt(getStyle(obj, CYK_curr));
+                        }
+                        var speed = (json[CYK_curr] - CYK_oNumber) / 6;
+                        speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                        if (CYK_oNumber != json[CYK_curr])
+                            CYK_iStop = false;
+                        if (CYK_curr == "opacity") {
+                            obj.style.filter = "alpha(opacity:" + (CYK_oNumber + speed) + ")";
+                            obj.style.opacity = (CYK_oNumber + speed) / 100;
+                        } else {
+                            obj.style[CYK_curr] = CYK_oNumber + speed + "px";
+                        }
+                    };
+                    if (CYK_iStop) {
+                        clearInterval(obj.timer);
+                        if (endFn) endFn();
+                    }
+                }, 30);
+        };
+
+        //获取非行间样式
+        function getStyle(obj, name) {
+            if (obj.currentStyle) {
+                obj = currentStyle[name];
+            } else {
+                obj = getComputedStyle(obj, false)[name];
+            }
+            return obj;
+        };
+    </script>
+    <script type="text/javascript">
+        function getCookie(name) {
+            var CYK_arr, CYK_reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+            if (CYK_arr = document.cookie.match(CYK_reg)) {
+                return unescape(CYK_arr[2]);
+            } else {
+                return null;
+            }
+        }
+
+        function exitLogin() {
+            delCookie("user");
+            location.reload();
+        }
+
+        function delCookie(name) {
+            var exp = new Date();
+            exp.setTime(exp.getTime() - 1);
+            var cval = getCookie(name);
+            if (cval && cval != null) {
+                document.cookie = name + '=' + cval + ';expires=' + exp.toGMTString();
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>产品展示</title>
+
+    <link href="css/css.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+        function CYK_swapImgRestore() { //v3.0
+            var i, x, a = document.CYK_sr;
+            for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+        }
+
+        function CYK_preloadImages() { //v3.0
+            if (getCookie("user") == 1) {
+                document.getElementById("loginp").innerHTML = "陈元凯|<a href='javascript:void(0)' onclick='exitLogin()'>退出登录</a>|<a href='shopCar.html'>购物车</a>"; //
+            }
+            var d = document;
+            if (d.images) {
+                if (!d.CYK_p) d.CYK_p = new Array();
+                var i, j = d.CYK_p.length,
+                    a = CYK_preloadImages.arguments;
+                for (i = 0; i < a.length; i++)
+                    if (a[i].indexOf("#") != 0) {
+                        d.CYK_p[j] = new Image;
+                        d.CYK_p[j++].src = a[i];
+                    }
+            }
+        }
+
+        function CYK_findObj(n, d) { //v4.01
+            var p, i, x;
+            if (!d) d = document;
+            if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+                d = parent.frames[n.substring(p + 1)].document;
+                n = n.substring(0, p);
+            }
+            if (!(x = d[n]) && d.all) x = d.all[n];
+            for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+            for (i = 0; !x && d.layers && i < d.layers.length; i++) x = CYK_findObj(n, d.layers[i].document);
+            if (!x && d.getElementById) x = d.getElementById(n);
+            return x;
+        }
+
+        function CYK_swapImage() { //v3.0
+            var i, j = 0,
+                x, a = CYK_swapImage.arguments;
+            document.CYK_sr = new Array;
+            for (i = 0; i < (a.length - 2); i += 3)
+                if ((x = CYK_findObj(a[i])) != null) {
+                    document.CYK_sr[j++] = x;
+                    if (!x.oSrc) x.oSrc = x.src;
+                    x.src = a[i + 2];
+                }
+        }
+    </script>
+</head>
+
+<body onload="CYK_preloadImages('images/e1.jpg','images/e2.jpg','images/e3.jpg','images/e4.jpg')">
+    <!-- 头部导航-->
+    <nav id="guding">
+        <div id="login">
+            <h2>欢迎！</h2>
+            <div id="loginp"><a href="login.html">登录</a>|<a href="#">注册</a>|<a href="lianxi.html">联系我们</a></div>
+        </div>
+        <div id="logoall">
+            <div id="logo">
+                <div id="logo1">
+                    <a href="index.html">
+                        <img src="image/logo.png" width="200" height="100" />
+                    </a>
+                </div>
+                <div id="logo2"><img src="image/logoright.png" width="100" height="25" /></div>
+            </div>
+        </div>
+        <div id="naviall">
+            <div id="navi">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="About.html">关于</a></li>
+                    <li id="p">
+                        <div class="product"><a href="show.html">产品展示</a></div>
+                        <div>
+                            <ul id="p_show" hidden="hidden">
+                                <li><a href="show.html#content1">酒庄系列</a></li>
+                                <li><a href="show.html#content2">优选系列</a></li>
+                                <li><a href="show.html#tast">酒具</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="service.html">服务</a></li>
+                    <li><a href="service.html">服务</a></li>
+                    <li><a href="liuyan.html">在线留言</a></li>
+                    <li><a href="lianxi.html">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="addHeight"></div>
+    <!--头部结束-->
+    <div id="picture"><img src="image/lunbo.jpg" width="1200" /></div>
+    <div id="show">
+        <div id="line1"></div>
+        <p>SHOW</p>
+        <div id="line2"></div>
+    </div>
+    <div id="content1">
+        <h3>酒庄系列 Estate Series</h3>
+        <ul>
+            <li>
+                <div class="pic1"><img src="image/a2.jpg" width="250" height="250" /></div>
+                <div class="name"><a href="shopDetail.html">玫瑰山庄园红酒</a></div>
+            </li>
+            <li>
+                <div class="pic1"><img src="image/a3.jpg" width="250" height="250" /></div>
+                <div class="name"><a href="shopDetail.html">马利哥酒庄红酒</a></div>
+            </li>
+            <li>
+                <div class="pic1"><img src="image/a4.jpg" width="250" height="250" /></div>
+                <div class="name"><a href="shopDetail.html">杜哈米隆古堡红酒</a></div>
+            </li>
+            <li>
+                <div class="pic1"><img src="image/a5.jpg" width="250" height="250" /></div>
+                <div class="name"><a href="shopDetail.html">庞特卡奈古堡红酒</a></div>
+            </li>
+            <li>
+                <div class="pic1"><img src="image/c1.jpg" width="250" height="250" /></div>
+                <div class="name"><a href="shopDetail.html">柏图斯酒庄红酒</a></div>
+            </li>
+            <li>
+                <div class="pic1"><img src="image/c2.jpg" width="250" height="250" /></div>
+                <div class="name"><a href="shopDetail.html">柏安特酒庄红酒</a></div>
+            </li>
+            <li>
+                <div class="pic1"><img src="image/c3.jpg" width="250" height="250" /></div>
+                <div class="name"><a href="shopDetail.html">雅各宾庄园红酒</a></div>
+            </li>
+            <li>
+                <div class="pic1"><img src="image/c4.jpg" width="250" height="250" /></div>
+                <div class="name"><a href="shopDetail.html">盖伊之花酒庄红酒</a></div>
+            </li>
+        </ul>
+    </div>
+    <div id="line3"></div>
+    <div id="content2">
+        <h3>优选系列 Premium Series</h3>
+        <ul>
+            <li>
+                <div class="pic2">
+                    <a href="shopDetail.html" onmouseout="CYK_swapImgRestore()" onmouseover="CYK_swapImage('Image15','','image/e1.jpg',1)"><img src="image/d1.jpg" width="250" height="250" id="Image15" /></a>
+                </div>
+            </li>
+            <li>
+                <div class="pic3">
+                    <a href="shopDetail.html" onmouseout="CYK_swapImgRestore()" onmouseover="CYK_swapImage('Image14','','image/e2.jpg',1)"><img src="image/d2.jpg" width="250" height="250" id="Image14" /></a>
+                </div>
+            </li>
+            <li>
+                <div class="pic4">
+                    <a href="shopDetail.html" onmouseout="CYK_swapImgRestore()" onmouseover="CYK_swapImage('Image13','','image/e3.jpg',1)"><img src="image/d3.jpg" width="250" height="250" id="Image13" /></a>
+                </div>
+            </li>
+            <li>
+                <div class="pic5">
+                    <a href="shopDetail.html" onmouseout="CYK_swapImgRestore()" onmouseover="CYK_swapImage('Image12','','image/e4.jpg',1)"><img src="image/d4.jpg" width="250" height="250" id="Image12" /></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="line4"></div>
+    <div id="tast">
+        <h3>酒具 Drinking Vessel</h3>
+        <ul>
+            <li>
+                <div class="img1">
+                    <a href="shopDetail.html"><img src="image/f2.JPG" width="180" height="200" /></a>
+                </div>
+                <div class="sign"><a href="shopDetail.html">对开门黑色双礼盒</a></div>
+                <div class="price">34.0</div>
+            </li>
+            <li>
+                <div class="img1">
+                    <a href="shopDetail.html"><img src="image/f1.PNG" width="180" height="200" /></a>
+                </div>
+                <div class="sign"><a href="shopDetail.html">酒具三件套</a></div>
+                <div class="price">30.0</div>
+            </li>
+            <li>
+                <div class="img1">
+                    <a href="shopDetail.html"><img src="image/f3.png" width="180" height="200" /></a>
+                </div>
+                <div class="sign"><a href="shopDetail.html">竖琴醒酒器</a></div>
+                <div class="price">150.0</div>
+            </li>
+            <li>
+                <div class="img1">
+                    <a href="shopDetail.html"><img src="image/f4.jpg" width="180" height="200" /></a>
+                </div>
+                <div class="sign"><a href="shopDetail.html">香槟杯双支盒装</a></div>
+                <div class="price">119.0</div>
+            </li>
+        </ul>
+    </div>
+    <div id="step">
+        <div id="line5"></div>
+        <p>品酒步骤 WINE TASTING STEP</p>
+        <div id="line6"></div>
+    </div>
+    <div id="bottom">
+        <ul>
+            <li>
+                <div class="picture1"><img src="image/pin1.jpg" width="300" height="200" /></div>
+                <p>Top1</p>
+                <p>倾斜酒杯45度</p>
+                <p>观测酒的颜色</p>
+            </li>
+            <li>
+                <div class="picture1"><img src="image/pin2.jpg" width="300" height="200" /></div>
+                <p>Top2</p>
+                <p>让酒摇晃，把鼻子</p>
+                <p>深入杯中，轻闻几下</p>
+            </li>
+            <li>
+                <div class="picture1"><img src="image/pin3.jpg" width="300" height="200" /></div>
+                <p>Top3</p>
+                <p>深啜一口</p>
+                <p>让酒液在口中打转</p>
+            </li>
+        </ul>
+    </div>
+    <div id="more">
+        <div id="morea"><a style="text-decoration: underline;" href="#">更多>>></a></div>
+    </div>
+
+    <!--尾部-->
+    <div id="version">
+        <p>关于我们 | 约稿启事 | 网站导航 | 诚聘英才| 刊登广告 | 服务项目 | 联系我们 | 法律声明 | 建议投诉 | 网站帮助| 友情链接<br />
+        </p>
+        <p>xxx | 客服电话：0771-xxxxx|投诉信箱：xxx<br /></p>
+        <p> xxx || 软件学院 || 班级 ：软件工程（专升本）一班 || 学号 xxxxx || 姓名 xxx </p>
+    </div>
+    <!--尾部结束-->
+    <script type="text/javascript">
+        function getCookie(name) {
+            var CYK_arr, CYK_reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+            if (CYK_arr = document.cookie.match(CYK_reg)) {
+                return unescape(CYK_arr[2]);
+            } else {
+                return null;
+            }
+        }
+
+        function exitLogin() {
+            delCookie("user");
+            location.reload();
+        }
+
+        function delCookie(name) {
+            var exp = new Date();
+            exp.setTime(exp.getTime() - 1);
+            var cval = getCookie(name);
+            if (cval && cval != null) {
+                document.cookie = name + '=' + cval + ';expires=' + exp.toGMTString();
+            }
+        }
+    </script>
+    </div>
+</body>
+
+</html>
